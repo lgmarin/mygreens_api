@@ -6,12 +6,11 @@ WORKDIR /home/mygreensapi
 
 # Prepare environment and packages 
 COPY requirements.txt requirements.txt
-RUN python -m venv .venv
-RUN .venv/bin/pip install -r requirements.txt
+RUN pip install -r requirements.txt
 
 # Copy main files
 COPY api api
-COPY app.py run.sh ./
+COPY app.py run.sh run_dev.sh ./
 RUN chmod +x run.sh
 
 # Set ENV variable and files ownership
@@ -21,4 +20,4 @@ USER mygreensapi
 
 # Set external port and run the server
 EXPOSE 5000
-ENTRYPOINT ["./run.sh"]
+CMD ["./run.sh"]
