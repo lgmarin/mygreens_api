@@ -6,8 +6,8 @@ WORKDIR /home/mygreensapi
 
 # Prepare environment and packages 
 COPY requirements.txt requirements.txt
-RUN python -m venv venv
-RUN pip install --no-cache-dir -r requirements.txt
+RUN python -m venv .venv
+RUN .venv/bin/pip install -r requirements.txt
 
 # Copy main files
 COPY api api
