@@ -24,7 +24,7 @@ class TestingConfig(Config):
 class ProductionConfig(Config):
     pass
 
-config_by_name = dict(
+configs = dict(
     dev=DevelopmentConfig,
     test=TestingConfig,
     prod=ProductionConfig
