@@ -24,8 +24,8 @@ class TestingConfig(Config):
 class ProductionConfig(Config):
     pass
 
-configs = dict(
-    dev=DevelopmentConfig,
-    test=TestingConfig,
-    prod=ProductionConfig
-)
+configs = {
+    "dev" : DevelopmentConfig,
+    "test" : TestingConfig,
+    "prod": ProductionConfig
+}

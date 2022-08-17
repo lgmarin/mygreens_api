@@ -11,4 +11,7 @@ def create_app(config_name):
 
     db.init_app(app)
 
+    from .controllers import products
+    app.register_blueprint(products, url_prefix="")
+
     return app
