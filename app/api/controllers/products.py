@@ -1,7 +1,9 @@
 from flask import request, jsonify
-from . import products
+from flask import Blueprint
 
-@products.route('/', methods = ['GET', 'POST'])
+products = Blueprint('products', __name__)
+
+@products.route('/products', methods = ['GET', 'POST'])
 def home():
     if(request.method == 'GET'):
         

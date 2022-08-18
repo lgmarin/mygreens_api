@@ -10,7 +10,11 @@ def create_app(config_name: str) -> Flask:
 
     db.init_app(app)
 
-    from .controllers import products
-    app.register_blueprint(products, url_prefix="/products")
+    @app.route("/hello")
+    def hello():
+        return "Hello, World!"
+
+    from .controllers.products import products
+    app.register_blueprint(products, url_prefix="/")
 
     return app
